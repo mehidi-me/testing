@@ -1,377 +1,186 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title> Live Concert | Streaming</title>
+<html>
+
+  <head>
+    <title>Live Streaming</title>
+    <meta charSet="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Ｓｔｒｅａｍｉｎｇ 𝚌𝚘𝚗𝚌𝚎𝚛𝚝 » Sting GR | Liveᴴᴰ ｍｕｓｉｃ２０２０">
+    <meta property="og:image" content="">
+    <link rel="shortcut icon" href="https://www.launchaco.com/static/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Spectral" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.launchaco.com/static/AllTemplates.min.css">
+
+    <style>
+      .launchaco-promo {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        cursor: pointer;
+        width: 0;
+        height: 0;
+        z-index: 999999;
+      }
+
+      .launchaco-promo__active {
+        width: initial;
+        height: initial;
+      }
+
+      .launchaco-promo-speechbubble {
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+        position: absolute;
+        left: 50px;
+        top: -11px;
+        padding: 9px;
+        color: white;
+        border-radius: 3px;
+        background: linear-gradient(#227ef7, #1290fc);
+        font-size: 14px;
+        font-weight: 600;
+        width: 93px;
+        box-sizing: border-box;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .15s ease-in-out;
+      }
+
+      .launchaco-promo__active:hover .launchaco-promo-speechbubble {
+        opacity: 1;
+      }
+
+      .launchaco-promo svg {
+        transition: all .3s ease-in-out;
+        opacity: 0;
+      }
+
+      .launchaco-promo__active svg {
+        opacity: 1;
+      }
+
+      .launchaco-promo-speechbubble:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        left: -4px;
+        bottom: 10px;
+        border-radius: 3px;
+        background: #1290fc;
+        z-index: 2;
+        position: absolute
+      }
+
+      .launchaco-promo__active .launchaco-promo-speechbubble__animate {
+        animation: popinpopup 3s linear forwards 0.1s;
+      }
+
+      @keyframes popinpopup {
+        0% {
+          opacity: 0;
+          transform: translate3d(0, 3px, 0)
+        }
+
+        7%,
+        93% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0)
+        }
+
+        100% {
+          opacity: 0;
+          transform: translate3d(0, -4px, 0)
+        }
+      }
+
+      .launchaco-promo-animate:hover {
+        opacity: 1 !important;
+      }
+    </style>
 
 
-<meta name="description" content="🔴 LIVE Today!  -  Live Streaming Concert & Festival" />
-<meta name="keywords" content="LIVE" />
-<meta property="og:site_name" content="Concert Live Stream Online HD" />
-<meta property="og:type" content="Website" />
-<meta name="Search Engines" content="www.altaVista.com, www.aol.com, www.infoseek.com, www.excite.com, www.hotbot.com, www.lycos.com, www.magellan.com, www.looksmart.com, www.cnet.com, www.voila.com, www.google.fr, www.google.com, www.google.com.vn, www.yahoo.fr, www.yahoo.com, www.alltheweb.com, www.msn.com, www.netscape.com, www.nomade.com" />
-<meta name="Language" content="english" />
-<meta property="og:description" content="🔴 LIVE Today!  -  Live Streaming Concert & Festival" />
-<meta property="og:keywords" content="LIVE" />
-<meta property="og:image" content="./image/faviconmusic.png" />
-<link rel="icon" type="image/png" href="./image/faviconmusic.png" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<script src="./js/jquery.min.js"></script>
-<link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./css/main.css" type="text/css" />
-<link rel="stylesheet" href="./css/all.min.css" type="text/css" />
-<link rel="stylesheet" href="./css/custom.css" type="text/css" />
+    <style>
 
+    </style>
+  </head>
 
-<!-- <script type="text/javascript" src="templates/v5/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="templates/v5/js/jquery.lazyload.js"></script>
-<script type="text/javascript" src="templates/v5/js/jquery.hover-intent.js"></script>
-<script type="text/javascript" src="templates/v5/js/jquery.cluetip.min.js"></script>
-<script type="text/javascript" src="templates/v5/js/jquery.qtip.min.js"></script>
-<script type="text/javascript" src="templates/v5/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="templates/v5/js/modernizr.html"></script> -->
-
-
-<style >
-
-.hoverTable{
-    width:100%; 
-    border-collapse:collapse; 
-  }
-  
-  /* Define the hover highlight color for the table row */
-    .hoverTable tr:hover {
-          background-color: #1a1a1a;
-    }
-    
-
-
-</style>
-
-</head>
-<body>  
-  
-<div id="xmain">
-
-    <!--header-->
-    <header>
-        <div class="container">
-            <div class="header-logo">
-                <h1>
-                    <a title="Stream Concert" href="#" id="logo">Stream Concert</a>
-                </h1>
-            </div>
-            <div class="mobile-menu"><i class="glyphicon glyphicon-phone"></i></div>
-            <div id="top-user"></div>
-            <div class="clearfix"></div>
+  <body class="font-elegant">
+    <div class="purple-gradient background">
+      <div class="bg">
+        <div class="bg-image" style="background-image: url(&quot;https://cdn.launchaco.com/images/e6af0cb7-b958-4acf-b8da-b401ec39f1c7.png&quot;);"></div>
+        <!---->
+      </div>
+      <header class="header">
+        <div class="container-lrg">
+          <div class="flex col-12 spread"><a class="logo primary-color launchaco-builder-hoverable logo">Tomorrowland - Around the World</a> <a href="mailto:" class="nav-link secondary-color mr0">Contact</a></div>
         </div>
-    </header>
-    
-    
-    
-         
-    
-    
-    
-    <div id="main" class="page-detail">
-
-<div class="page-cover" style="background-image: url(./image/no-back.gif)"></div>       <div class="container">
-            <div class="pad"></div>
-                <div class="main-content main-detail ">
-                    <div class="md-top">
-                        <div id="mv-info">
-                            <div class="mvi-content">
-                                
-                                
-                                    
-                                  <div class="body-cover">
-            <div class="signup-pop">
-                <p>Only registered users can comment and watch live streaming.</p>
-                <a onclick="window.location.href='#'" target="_self" class="">
-                    <div class="signup-button">Signup Now</div>
-                </a>
-
+      </header>
+      <section class="section">
+        <div class="container-lrg flex">
+          <div class="col-6 flex flex-column center-vertical mobile-text-center mb40">
+            <h1 class="heading-lrg primary-color launchaco-builder-hoverable">
+              Live Streaming » Tomorrowland - Around the World</h1>
+            <!---->
+            <div class="mt40"><a href="live.html" target="_self" class="button mobile-text-center mt10 launchaco-builder-hoverable mobile-text-center accent-bg primary-color"> <span> Watch Here </span></a></div>
+          </div>
+          <div class="col-6 flex center-horizontal center-vertical">
+            <div class="launchaco-builder-hoverable">
+              <div class=""><img src="https://cdn.launchaco.com/images/214093da-e047-4b29-817c-d52b83ccf736.png" alt="Screenshot of small App" class="custom-img"></div>
             </div>
+          </div>
         </div>
-        <div class="stage stage-bg--1">
-            <div class="header-div row padding-bottom-small-0"> 
-                <p><span class="logo-text">  </span></p>
-
-            </div>
-            
-                <div class="video col-md-8 col-md-offset-2">
-                <div class="title-keyword" style="font-size:150%;">
-                    <span style="visibility: hidden;" id="lastDateBlinker"><a href="#"><i class="fa fa-circle" style="color:red"></i></a></span>
-                    <script type="text/javascript">
-                        function blinkLastDateSpan(){
-                            if($("#lastDateBlinker").css("visibility").toUpperCase() == "HIDDEN"){
-                                $("#lastDateBlinker").css("visibility","visible");
-                                setTimeout(blinkLastDateSpan,200);
-                            }else{
-                                $("#lastDateBlinker").css("visibility","hidden");
-                                setTimeout(blinkLastDateSpan,200);
-                            }
-                        }
-                        blinkLastDateSpan();
-                    </script>
-                    <span style="color: #fff;">LIVE</span><br>
-                </div>
-                
-                    <div class="video-screen">
-                         <div style="display: none;"><iframe width="420" height="345" src="#"></iframe></div>
-                        <div style="display: none;" class="overlay-video"></div>
-                        <div style="display: none;" class="percent-container"></div>
-                        <div style="display: block;" class="popup-time">
-                            <p>Begins in <span id="countdown">00:05</span></p>
-                        </div>
-                        <div class="popup-container">
-                        
-                            <center><div class="popup-text"><center>
-                                <center><img src="./image/logo-m.png"><center>
-                                    <center><br>Please Register Free Account to Access
-                                    <br><br><br><center>
-                                
-                            </div>
-                            <a href="#" target="_self" class="clone">
-                                <div class="popup-button">Register Now</div>
-                            </a>
-                           
-                        </div>
-                        </div>
-                        <div class="controls">
-                            <div class="small-1 medium-1 large-1 no-col-hd-pad columns pause-play"><i style="display: none;" class="icon-play"></i><a href="#" target="_blank" class="clone"><i style="display: inline;" class="icon-pause"></i></a></div>
-                            <div class="small-8 medium-7 large-9 columns">
-                                <div class="time"></div>
-                            </div>
-                            <div class="small-0 medium-0 large-1 columns no-col-left-pad show-for-large-up vol-wrapper">
-                                <div class="small-0 medium-0 large-1 columns"><a href="#" target="_blank" class="x-domain clone"><i class="icon-vol"></i></a></div>
-                            </div><a href="#" target="_blank" class="x-domain fullscreen clone"><i class="icon-fullscreen"></i></a></div>
-                        </div>
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="comments-wrapper" id="comment-box" style="margin-top: 22px;">
-                                <div class="comment-row">
-                                    <div class="username">donny23</div>
-                                    <div class="comment">HAHAHAHA</div>
-                                    <div class="comment-time">3m ago</div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="comment-row">
-                                    <div class="username">ecrivin</div>
-                                    <div class="comment">Live Concert  work on my telly , its Cool !! </div>
-                                    <div class="comment-time">3m ago</div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="comment-row">
-                                    <div class="username">knicks07</div>
-                                    <div class="comment">
-                                        <img src="./image/laughing-emoji.png" class="emoji">
-                                        <img src="./image/laughing-emoji.png" class="emoji">
-                                        <img src="./image/laughing-emoji.png" class="emoji">
-                                    </div>
-                                    <div class="comment-time">3m ago</div>
-                                    <div class="clear"></div></div><div class="comment-row">
-                                    <div class="username">ecrivin</div>
-                                    <div class="comment">Thank you very much - was lookin for  for a veery long time</div>
-                                    <div class="comment-time">3m ago</div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="comment-row">
-                                    <div class="username">redwings19</div>
-                                    <div class="comment">10/10 WEBSITE , Fantastic Liblary !! would recomended this to everyone. u kiding m <img src="./image/sunglasses-emoji.png" class="emoji"></div><div class="comment-time">2m ago</div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="comment-row">
-                                    <div class="username">juveee</div>
-                                    <div class="comment">Love that so many are available in HD <img src="./image/laughing-emoji.png" class="emoji"></div>
-                                    <div class="comment-time">2m ago</div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="comment-row">
-                                    <div class="username">viveleCH</div>
-                                    <div class="comment">no stream seem fine for me 
-                                        <img src="./image/hearteyes-emoji.png" class="emoji">
-                                        <img src="./image/hearteyes-emoji.png" class="emoji">
-                                    </div>
-                                    <div class="comment-time">2m ago</div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="comment-row">
-                                    <div class="username">greghaady</div>
-                                    <div class="comment">now  !! yay </div>
-                                    <div class="comment-time">2m ago</div>
-                                    <div class="clear">
-                                    </div>
-                                </div>
-                                <div class="comment-row">
-                                    <div class="username">uh112</div>
-                                    <div class="comment">are ye to sab HD ha</div>
-                                    <div class="comment-time">2m ago</div>
-                                    <div class="clear">
-                                    </div>
-                                </div>
-                                <div style="display: block;" class="comment-row" id="comment-1">
-                                    <div class="username">alextheGr8</div>
-                                    <div class="comment">Live in , i know  is the best <img src="./image/sunglasses-emoji.png" class="emoji"></div>
-                                    <div class="comment-time">now
-                                    </div>
-                                    <div class="clear">
-                                    </div>
-                                </div>
-                                <div class="comment-row" id="comment-2">
-                                    <div class="username">bmarshall</div>
-                                    <div class="comment">Best Recorder ... im lucky . <img src="./image/laughing-emoji.png" class="emoji"> u kidding me??<img src="./image/laughing-emoji.png" class="emoji"><img src="./image/laughing-emoji.png" class="emoji">
-                                    </div>
-                                    <div class="comment-time">now</div>
-                                    <div class="clear"></div>
-                                </div> 
-                                <div class="comment-row" id="comment-3">
-                                    <div class="username">lvspeace</div>
-                                    <div class="comment">Have a great day! Yeah YOU, I'm talking to YOU! <img src="./image/laughing-emoji.png" class="emoji"> <img src="./image/laughing-emoji.png" class="emoji"> <img src="./image/laughing-emoji.png" class="emoji"></div>
-                                    <div class="comment-time">now</div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="comment-row" id="comment-4">
-                                    <div class="username">TB12fan</div>
-                                    <div class="comment"> Save your money, guuys <img src="./image/laughing-emoji.png" class="emoji"></div>
-                                    <div class="comment-time">now</div>
-                                    <div class="clear"></div>
-                                </div> 
-                                <div class="comment-row" id="comment-5">
-                                    <div class="username">jennyb</div>
-                                    <div class="comment">@greghaady no stream seems fine for me :)</div>
-                                    <div class="comment-time">now</div>
-                                    <div class="clear"></div>
-                                </div> 
-
-                                <div class="comment-row" id="comment-6">
-                                    <div class="username">jaecrowder</div>
-                                    <div class="comment">This is what I wait wait  , can finally live streaming with good quality and without HD video <img src="./image/wink-emoji.png" class="emoji"></div>
-                                    <div class="comment-time">now</div>
-                                    <div class="clear"></div>
-                                </div>
-                                
-                                <div class="comment-row" id="comment-7">
-                                    <div class="username">marvinj</div>
-                                    <div class="comment">Awesome work bro! Loving this live streaming , No Lag </div>
-                                    <div class="comment-time">now</div>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                            <div class="fullcomment-wrapper">
-                                <input placeholder="Write a comment..." class="write-comment" type="text">
-                                <img src="./image/default-emoji.png" class="default-emoji">
-                            </div>
-                            <div class="powered">Powered by ChatZone 速</div>
-                        </div>
-                    </div>
-                            </div>
-                        </div>
-                        <div class="row thumbs" style="margin-top:10px;"></div>
-                    </div>
-                </div>
-<script type="text/javascript">     
-$(function () { 
-    $('a[data-toggle="tooltip"]').tooltip({
-    html:       true
-});
-});
-</script>
-    
-<style>
-.tooltip.in {
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-.tooltip{
-    z-index: 9999 !important;
-}
-</style>
-
-
- <div class="movies-list-wrap mlw-latestmovie">
-          
-          
-              <div class="ml-title">
-                
-                
-               
-              
-              
-                          <div class="table-responsive bg-color2 " >
-                              
-                            <table class="table hoverTable" >
-                       
-                              
-                               
-                                  
-                                  <tbody>
-                                      
-                                      
-                                      
-
-
-                  
-                  
-  
-                 </tbody></table>
-                                  <div id="vrel"><ul></ul></div>
-                                  
-                                  
-                                </div>  
-                                     
-                              </div> 
-                
-                
-              </ol>
-          
-<div id="appnextiframe"> </div>
-    <footer>
-    <div id="footer">
-     <div class="wauto" style="width:1250px;margin: 0 auto;">
-
-    
-                        </div>
-        <div class="container">
-           
-          
-            <div id="copyright">
-                
-                <p>Copyright &copy; <a href="#" title=""></a>. All Rights
-                    Reserved</p>
-                <p style="font-size: 11px; line-height: 14px;">All clips are collected from outside sources. No videos are hosted on this server.  is not liable for copyright by any country.
-                                The  Team is always updating and adding more concert live stream every day. It's all here.
-                    Best view with Internet Explorer 7+/FireFox/Google Chrome, Flash Player, 4K.
-                    <b>Concert Free</b>, <b>Concert Streaming</b>, <b>Concert Festival</b>, <b>Concert Tour</b>, <b>Concert Online</b>
-                </p>
-            </div>
-            <div id="footer-social">
-                <a href="#" class="fs-icon fs-facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="fs-icon fs-twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="fs-icon fs-google"><i class="fa fa-google-plus"></i></a>
-            </div>
-            <div id="footer-menu">
-                <a href="#" title="Privacy Policy"></a>
-                
-            </div>
-        </div>
+      </section>
     </div>
-</footer>
-    <!--/footer-->
-</div>
-<div class="clearfix"></div>
 
-<div class="online">
+    <a id="visual-dreamer" class="launchaco-promo" target="_blank" href="https://www.launchaco.com/">
+      <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient x1="9.394%" y1="57.704%" x2="105.69%" y2="27.607%" id="a">
+            <stop stop-color="#007FFF" offset="0%" />
+            <stop stop-color="#1290FC" offset="100%" />
+          </linearGradient>
+          <linearGradient x1="50%" y1="0%" x2="50%" y2="137.557%" id="b">
+            <stop stop-color="#FF9386" offset="0%" />
+            <stop stop-color="#FF5F86" offset="100%" />
+          </linearGradient>
+          <linearGradient x1="30.817%" y1="-31.6%" x2="63.808%" y2="151.297%" id="c">
+            <stop stop-color="#D7EDFF" offset="0%" />
+            <stop stop-color="#FFF" stop-opacity="0" offset="100%" />
+          </linearGradient>
+        </defs>
+        <g fill="none">
+          <circle fill="url(#a)" cx="19.832" cy="19.832" r="19.832" />
+          <path d="M26.616.325l4.308 12.587-4.669-.315L26.218.388c0-.105.091-.19.204-.191.088 0 .166.051.194.128z" fill="url(#b)" transform="rotate(45 28.571 6.555)" />
+          <path d="M32.031 35.658c-6.164 2.721-12.745-4.33-11.992-10.011 2.617.782 4.626.997 7.904 2.01 2.34.769 4.152.479 5.386-1.13 1.234-1.607 1.316-3.502 0-5.158-4.826-5.49 0 0-10.516-12.264l2.923-2.95C.117 4.123 5.302 32.333 6.903 35.095c4.01 3.54 14.11 8.709 25.128.563z" fill="#FFF" />
+          <path d="M9.782 19.176l-.034-.016c0 5.76 4.425 21.794 22.185 16.378-6.148 2.716-12.71-4.29-12.006-9.97a7.394 7.394 0 0 1-2.73.519c-3.922 0-7.135-3.047-7.415-6.911z" fill="url(#c)" />
+          <ellipse fill="#354158" cx="22.185" cy="14.958" rx="2.017" ry="1.849" />
+          <ellipse fill="#354158" cx="22.185" cy="14.958" rx="2.017" ry="1.849" />
+        </g>
+      </svg>
+      <div class="launchaco-promo-speechbubble launchaco-promo-speechbubble__animate">Built With Launchaco</div>
+      <div class="launchaco-promo-speechbubble">Built With Launchaco</div>
+    </a>
+  </body>
 
-<div class="online-icon"></div>
-<br>
-<br>
+  <script>
+    window.onscroll = function()
+    {
+      showAd()
+    }
 
-2520 Users Online Now<br>
-</div>
+    function showAd()
+    {
+      var scrollBarPosition = window.pageYOffset | document.body.scrollTop;
 
+      // At specifiv position do what you want
+      if (scrollBarPosition > 300)
+      {
+        document.getElementById("visual-dreamer").className = "launchaco-promo launchaco-promo__active";
+        window.onscroll = function() {};
+      }
+    }
+  </script>
 
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/script.js"></script>
-</body>
 </html>
