@@ -34,7 +34,25 @@
 
 
 <style >
+.timeDown {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: red;
+}
+#live-image{
+    width: 320px;
+    margin: 0 auto;
+    display: none;
+}
 
+.timeDown span {
+  display: block;
+  font-size: 4.5rem;
+}
 .hoverTable{
     width:100%; 
     border-collapse:collapse; 
@@ -433,6 +451,17 @@ $(function () {
                 <h3>
                     Tomorrowland - Around the World Live Concert    
                 </h3>
+                <div id="containe">
+                    <ul>
+                
+                      <li class="timeDown"><span id="hours"></span>Hours</li>
+                      <li class="timeDown"><span id="minutes"></span>Minutes</li>
+                      <li class="timeDown"><span id="seconds"></span>Seconds</li>
+                    </ul>
+                </div>
+                <div id="live-image">
+                    <img src="./image/live.gif" alt="live">
+                </div>
                 <div class="mv-rating" itemtype="http://data-vocabulary.org/Review-aggregate" itemscope="">
                 </div>
                 <div class="block-social">
@@ -527,5 +556,53 @@ $(function () {
 
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/script.js"></script>
+
+<script>
+    const second = 1000,
+      minute = second * 60,
+      hour = minute * 60,
+      day = hour * 24;
+
+
+
+            // Set Year
+      const yr = '2020',
+
+            //   Set Month
+            mon = 'jul',
+
+            // Set Day
+            da = '19',
+
+            // Set Hours
+            ho = '22',
+
+            // Set Minutes
+            min = '1';
+
+
+
+let countDown = new Date(`${mon} ${da}, ${yr} ${ho}:${min}:00`).getTime(),
+    x = setInterval(function() {    
+
+      let now = new Date().getTime(),
+          distance = countDown - now;
+
+      
+        document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+
+      //do something later when date is reached
+      if (distance < 0) {
+       clearInterval(x);
+       console.log('time is end')
+        document.getElementById('containe').style.display = 'none'
+        document.getElementById('live-image').style.display = 'block'
+      }
+
+    }, second)
+    
+</script>
 </body>
 </html>
