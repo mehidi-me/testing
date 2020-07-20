@@ -152,6 +152,7 @@
                   <div id="containe">
                     <ul>
                 
+                      <li class="timeDown"><span id="days"></span>Days</li>
                       <li class="timeDown"><span id="hours"></span>Hours</li>
                       <li class="timeDown"><span id="minutes"></span>Minutes</li>
                       <li class="timeDown"><span id="seconds"></span>Seconds</li>
@@ -224,20 +225,37 @@
 
 
 
-            // Set Year
-      const yr = '2020',
 
-            //   Set Month
-            mon = 'jul',
 
-            // Set Day
-            da = '19',
 
-            // Set Hours
-            ho = '23',
 
-            // Set Minutes
-            min = '30';
+               // Start Countdown
+
+                // Set Year
+            const yr = '2020',
+
+                //   Set Month
+                mon = 'jul',
+
+                // Set Day
+                da = '21',
+
+                // Set Hours
+                ho = '23',
+
+                // Set Minutes
+                min = '30';
+
+                // End Countdown
+
+
+
+
+
+
+
+
+                
 
 
 
@@ -247,7 +265,7 @@ let countDown = new Date(`${mon} ${da}, ${yr} ${ho}:${min}:00`).getTime(),
       let now = new Date().getTime(),
           distance = countDown - now;
 
-      
+        document.getElementById('days').innerText = Math.floor(distance / (day)),
         document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
